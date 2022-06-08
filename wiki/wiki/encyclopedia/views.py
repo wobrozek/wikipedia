@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django import forms
-from django.urls import reverse
 from django.http import HttpResponseRedirect
 
 from . import util
@@ -32,15 +31,8 @@ def wikiForm(request):
         if form.is_valid():
             dane=form.cleaned_data['search'];
             if(util.get_entry(dane)!=None):
+                return HttpResponseRedirect(f"wiki/{dane}")
 
-                return render(request, "encyclopedia/wiki.html", {
-                    "title": dane,
-                    "form": newForm()
-                })
-
-    return render(request, "encyclopedia/wiki.html", {
-            "title": "Page not found",
-            "form":newForm()
-    })
+    return HttpResponseRedirect(f"wiki/error")
 
 

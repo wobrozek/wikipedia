@@ -8,11 +8,11 @@ from django.http import HttpResponseRedirect
 from . import util
 
 class newForm(forms.Form):
-    search=forms.CharField(label='Szukaj tematu ', max_length=50)
+    search=forms.CharField(label='Search', max_length=50)
 
 class newTextArea(forms.Form,forms.Textarea):
-    title = forms.CharField(label='Tytuł', max_length=50)
-    content=forms.CharField(widget=forms.Textarea(attrs={'cols':10}))
+    title = forms.CharField(label='Title', max_length=50)
+    content=forms.CharField(label="",widget=forms.Textarea(attrs={'cols':10}))
 
 
 

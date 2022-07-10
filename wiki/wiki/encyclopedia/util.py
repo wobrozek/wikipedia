@@ -1,5 +1,4 @@
 import re
-
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 
@@ -35,3 +34,12 @@ def get_entry(title):
         return f.read().decode("utf-8")
     except FileNotFoundError:
         return None
+#
+# def compiler(text):
+#     for index in range(0,text):
+#         if text[index]=='#':
+#             headNumber=0
+#             while(text[index!='#']):
+#                 headNumber += 1
+#                 index += 1
+

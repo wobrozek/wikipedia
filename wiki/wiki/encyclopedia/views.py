@@ -16,7 +16,6 @@ class newTextArea(forms.Form,forms.Textarea):
 
 
 
-
 def index(request):
     '''
     show all websites (entries)
@@ -82,4 +81,14 @@ def addForm(request):
             return HttpResponseRedirect(f"/wiki/{title}")
     return HttpResponseRedirect("/wiki/error}")
 
+def edit(request, title):
+    initial_data={
+        'title':title,
+        'content':util.get_entry(title)
+    }
+    form=newTextArea(initial_data)
+    return render(request, "encyclopedia/editPage.html", {
+        "form": newForm(),
+        "textArea": form
+    })
 

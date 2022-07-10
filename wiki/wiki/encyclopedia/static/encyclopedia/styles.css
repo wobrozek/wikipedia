@@ -48,6 +48,22 @@ a:hover {
 .center {
 	width: 80%;
 }
+.button{
+    width: 200px;
+	padding: 10px;
+	background-color: #e0e0e0;
+	border-radius: 50px;
+	margin-top:50px;
+	text-align:center;
+	border: 1px solid #000;
+	display:block;
+
+}
+
+.button:hover {
+	background-color: #f0f0f0;
+}
+
 .submit {
 	margin: auto;
 	width: 200px;

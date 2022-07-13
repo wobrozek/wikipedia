@@ -21,7 +21,7 @@ def save_entry(title, content):
     filename = f"entries/{title}.md"
     if default_storage.exists(filename):
         default_storage.delete(filename)
-    default_storage.save(filename, ContentFile(content))
+    default_storage.save(filename, ContentFile(content.encode('utf-8')))
 
 
 def get_entry(title):
@@ -34,12 +34,5 @@ def get_entry(title):
         return f.read().decode("utf-8")
     except FileNotFoundError:
         return None
-#
-# def compiler(text):
-#     for index in range(0,text):
-#         if text[index]=='#':
-#             headNumber=0
-#             while(text[index!='#']):
-#                 headNumber += 1
-#                 index += 1
+
 

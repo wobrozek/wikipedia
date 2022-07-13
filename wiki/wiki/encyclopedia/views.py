@@ -33,7 +33,7 @@ def wiki(request , title):
         return render(request, "encyclopedia/wiki.html", {
             "title": title,
             "form": newForm(),
-            "text": util.get_entry(title)
+            "text": util.get_entry_markdown(title)
                       })
     else:
         return render(request, "encyclopedia/wiki.html", {

@@ -8,6 +8,6 @@ python -m pip install Django
 3. Next download and run my code by using this comands.
 ```console
 git clone https://github.com/wobrozek/Mail 
-cd wiki/wiki
+cd wikipedia/wiki
 python manage.py runserver
 ```
